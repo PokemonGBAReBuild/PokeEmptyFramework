@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Export\Package\" />
+    <Folder Include="Import\Rom\" />
+    <Folder Include="Import\Package\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PokemonGBAFrameWork" Version="1.0.1-preview2" />
+  </ItemGroup>
+
+</Project>
