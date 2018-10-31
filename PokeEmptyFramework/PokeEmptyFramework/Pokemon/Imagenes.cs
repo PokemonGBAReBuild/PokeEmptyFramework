@@ -17,8 +17,12 @@ namespace PokemonEmptyFramework
 	/// </summary>
 	public class Imagenes
 	{
-		
-		const int FRONTBACKLADO=64;
+        public class Coordenadas
+        {
+            //mirar como va
+        }
+
+        const int FRONTBACKLADO=64;
 		const int ICONLADO=32;
 		const int FOOTPRINTLADO=16;
 		
@@ -30,9 +34,11 @@ namespace PokemonEmptyFramework
 		//de momento de esto solo hay una opción por pokemon :)
 		ImgWithPath imgIcon;
 		ImgWithPath imgFootPrint;
-		
-		//falta añadir parte de las coordenadas
-		
+
+
+        Coordenadas CoordenadasFront;
+        Coordenadas CoordenadasBack;
+
 		public Imagenes(bool initialitze=true)
 		{
 			
@@ -121,6 +127,7 @@ namespace PokemonEmptyFramework
 				if(lsts[j][i].Path!=null&&lsts[j][i].Path.Exists)
 					lsts[j][i].Save();
 		}
-	
-	}
+
+
+    }
 }
