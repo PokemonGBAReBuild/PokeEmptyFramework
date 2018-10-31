@@ -20,7 +20,8 @@ namespace PokemonEmptyFramework
 	{
 		public const string EXTENSION=".png";
 		
-		FileInfo path;
+		DirectoryInfo pathDir;
+        string fileName;
 		Bitmap img;
 		
 		public ImgWithPath(Bitmap bmpEmpty=null,FileInfo path=null)
@@ -40,24 +41,31 @@ namespace PokemonEmptyFramework
 
 		public FileInfo Path {
 			get {
-				return path;
+				return new FileInfo(System.IO.Path.Combine(PathDir.FullName,FileName));
 			}
 			set{
 				if(value!=null&&value.Extension!=EXTENSION)
 					value=new FileInfo(value.FullName+EXTENSION);
-					
-				path=value;
+
+                PathDir = new DirectoryInfo(System.IO.Path.GetDirectoryName(value.FullName));
+                FileName = System.IO.Path.GetFileName(value.FullName);
 			}
 		}
-		public void Load()
+
+        public bool NoTienePathValido => PathDir == null && string.IsNullOrEmpty(FileName);
+
+        public DirectoryInfo PathDir { get => pathDir; set => pathDir = value; }
+        public string FileName { get => fileName; set => fileName = value; }
+
+        public void Load()
 		{
-			if(path==null||!path.Exists)
+			if(NoTienePathValido||!Path.Exists)
 				throw new FileNotFoundException();
 			Img=new Bitmap(Path.FullName);
 		}
 		public void Save()
 		{
-			if(path==null)
+			if(NoTienePathValido)
 				throw new Exception("Falta una ruta");
 			
 			Img.Save(Path.FullName,ImageFormat.Png);

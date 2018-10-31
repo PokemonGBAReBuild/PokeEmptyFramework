@@ -33,11 +33,19 @@ namespace PokemonEmptyFramework
         {
             evoluciones.RemoveAt(index);
         }
+        public static int MaxEvos(IList<Pokemon> pokedex)
+        {
+            int max = 1;
+            for (int i = 0; i < pokedex.Count; i++)
+                if (pokedex[i].Evoluciones.Count > max)
+                    max = pokedex[i].Evoluciones.Count;
+            return max;
+        }
     }
     public class Evolucion
     {
         MetodoEvolucion metodo;
-        ushort parametroMetodo;
+        int parametroMetodo;
         Pokemon pokemonAEVolucionar;
     }
     public class MetodoEvolucion

@@ -41,7 +41,10 @@ namespace PokemonEmptyFramework
 
 			}
 		}
-	
+        public override string ToString()
+        {
+            return Text;
+        }
 
-	}
+    }
 }

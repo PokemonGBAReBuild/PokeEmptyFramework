@@ -9,6 +9,7 @@
 using System;
 using System.Drawing;
 using System.IO;
+using PokemonGBAFrameWork;
 
 namespace PokemonEmptyFramework
 {
@@ -27,7 +28,13 @@ namespace PokemonEmptyFramework
 			colores=new Color[LENGTH];
 		}
 
-		public Color[] Colores {
+        public Paleta(Color[] paleta):this()
+        {
+            for (int i = 0; i < LENGTH; i++)
+                colores[i] = paleta[i];
+        }
+
+        public Color[] Colores {
 			get {
 				return colores;
 			}

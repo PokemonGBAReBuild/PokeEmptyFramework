@@ -8,11 +8,11 @@ namespace PokemonEmptyFramework
         {
             public enum EfectividadAtaque
             {
-                Inmune,
-                PocoEfectivo,
-                Efectivo,
-                SuperEfectivo
-                    //poner más si  faltan
+                Inmune=0,
+                PocoEfectivo=5,
+                SuperEfectivo=20
+                    //no se que pasaria si se pone un valor diferente...
+         
             }
             public EfectividadAtaque EfectividadAtaqueBatalla { get; set; }
             public Tipo Tipo { get; set; }
@@ -22,6 +22,9 @@ namespace PokemonEmptyFramework
         public ImgWithPath Imagen { get; set; }
         public List<Efecto> TiposRelacionados { get; private set; }
 
-       
+       public Tipo()
+        {
+            TiposRelacionados = new List<Efecto>();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace PokemonEmptyFramework
 	/// </summary>
 	public class PokedexData
 	{
-		string categoria;
+		string especie;
 		int peso;
 		int altura;
 		string descripcion1;
@@ -26,12 +26,12 @@ namespace PokemonEmptyFramework
 		int escalaEntrenador;
 		int offsetEntrenador;
 
-		public string Categoria {
+		public string Especie {
 			get {
-				return categoria;
+				return especie;
 			}
 			set {
-				categoria = value;
+				especie = value;
 			}
 		}
 		public int Peso {

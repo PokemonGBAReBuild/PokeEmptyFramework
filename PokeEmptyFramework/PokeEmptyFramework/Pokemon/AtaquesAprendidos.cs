@@ -16,15 +16,24 @@ namespace PokemonEmptyFramework
         int nivel;
         Ataque ataque;
 
+        public AtaqueAprendido(int nivel, Ataque ataque)
+        {
+            this.Nivel = nivel;
+            this.Ataque = ataque;
+        }
+
+        public int Nivel { get => nivel; set => nivel = value; }
+        public Ataque Ataque { get => ataque; set => ataque = value; }
+
         int IComparable<AtaqueAprendido>.CompareTo(AtaqueAprendido other)
         {
             Gabriel.Cat.S.Utilitats.CompareTo compareTo = other == null ? Gabriel.Cat.S.Utilitats.CompareTo.Inferior : Gabriel.Cat.S.Utilitats.CompareTo.Iguals;
             if(compareTo==Gabriel.Cat.S.Utilitats.CompareTo.Iguals)
             {
-                compareTo = (Gabriel.Cat.S.Utilitats.CompareTo)nivel.CompareTo(other.nivel);
+                compareTo = (Gabriel.Cat.S.Utilitats.CompareTo)Nivel.CompareTo(other.Nivel);
                 if (compareTo == Gabriel.Cat.S.Utilitats.CompareTo.Iguals)
                 {
-                    compareTo = (Gabriel.Cat.S.Utilitats.CompareTo)((IComparable<Ataque>)ataque).CompareTo(other.ataque);
+                    compareTo = (Gabriel.Cat.S.Utilitats.CompareTo)((IComparable<Ataque>)Ataque).CompareTo(other.Ataque);
 
                 }
             }

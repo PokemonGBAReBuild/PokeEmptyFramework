@@ -55,24 +55,44 @@ namespace PokemonEmptyFramework
 			get {
 				return imgsBack[0];
 			}
+            set
+            {
+                if (imgsBack.Count > 0)
+                    imgsBack[0] = value;
+                else imgsBack.Add(value);
+;            }
 		}
 
 		public ImgWithPath ImgFront {
 			get {
 				return imgsFront[0];
 			}
-		}
+            set
+            {
+                if (imgsFront.Count > 0)
+                    imgsFront[0] = value;
+                else imgsFront.Add(value);
+            }
+        }
 
 		public ImgWithPath ImgIcon {
 			get {
 				return imgIcon;
 			}
+            set
+            {
+                imgIcon = value;
+            }
 		}
 
 		public ImgWithPath ImgFootPrint {
 			get {
 				return imgFootPrint;
 			}
+            set
+            {
+                imgFootPrint = value;
+            }
 		}
 
 		public Paleta PaletaNormal {
