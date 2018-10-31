@@ -30,7 +30,9 @@ namespace PokemonEmptyFramework
 		public Imagenes Imagenes{get;set;}
 		public PokedexData PokedexData{get;set;}
 		public Cry Cry{get; private set;}
-		
+		public AtaquesAprendidos AtaquesAprendidos { get; private set; }
+        public MTMOCompatibles MTMOCompatibles { get; private set; }
+        public Evoluciones Evoluciones { get; private set; }
 		public Pokemon()
 		{
 			Nombre=new Nombre();
