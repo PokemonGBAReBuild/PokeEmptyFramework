@@ -26,18 +26,26 @@ namespace PokemonEmptyFramework
 		public static OrdenarPor OrdenSort=OrdenarPor.OrdenNacional;
 		
 		public Orden Orden{get;set;}
-		public Nombre Nombre{get; private set;}
+		public Nombre Nombre{get;  set;}
 		public Imagenes Imagenes{get;set;}
 		public PokedexData PokedexData{get;set;}
-		public Cry Cry{get; private set;}
-		public AtaquesAprendidos AtaquesAprendidos { get; private set; }
-        public MTMOCompatibles MTMOCompatibles { get; private set; }
-        public Evoluciones Evoluciones { get; private set; }
+		public Cry Cry{get;  set;}
+		public AtaquesAprendidos AtaquesAprendidos { get;  set; }
+        public MTMOCompatibles MTMOCompatibles { get;  set; }
+        public Evoluciones Evoluciones { get;  set; }
+        public StatsBase Stats { get; set; }
+
 		public Pokemon()
 		{
-			Nombre=new Nombre();
+            Orden = new Orden();
+            Nombre =new Nombre();
+            PokedexData = new PokedexData();
 			Cry=new Cry();
 			Imagenes=new Imagenes();
+            MTMOCompatibles = new MTMOCompatibles();
+            AtaquesAprendidos = new AtaquesAprendidos();
+            Evoluciones = new Evoluciones();
+            Stats = new StatsBase();
 		}
 		
 		#region IComparable implementation
