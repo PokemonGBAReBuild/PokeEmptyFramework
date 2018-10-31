@@ -8,7 +8,7 @@
  */
 using System;
 using System.IO;
-using Frame=PokemonGBAReBuildFrameWork;
+using Frame=PokemonEmptyFramework;
 namespace PokemonEmptyFramework.Import.Pokeruby.Basic
 {
 	/// <summary>
@@ -27,7 +27,7 @@ namespace PokemonEmptyFramework.Import.Pokeruby.Basic
 		public static Frame.Paleta Load(DirectoryInfo dirProject,string pathCarpeta,string archivoPaleta,bool corregirExtension=true)
 		{
 			return Load(Path.Combine(dirProject.FullName,pathCarpeta),archivoPaleta,corregirExtension);
-			
+		
 		}
 		public static Frame.Paleta Load(string fullPathCarpeta,string archivoPaleta,bool corregirExtension=true)
 		{

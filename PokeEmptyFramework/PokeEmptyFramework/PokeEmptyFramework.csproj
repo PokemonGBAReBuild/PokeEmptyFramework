@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>PokemonEmptyFramework</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="NGit.Port" Version="1.0.0" />
     <PackageReference Include="PokemonGBAFrameWork" Version="1.0.1-preview2" />
   </ItemGroup>
 

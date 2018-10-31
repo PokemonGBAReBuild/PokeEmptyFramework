@@ -31,7 +31,7 @@ namespace PokemonEmptyFramework
 		ImgWithPath imgIcon;
 		ImgWithPath imgFootPrint;
 		
-		
+		//falta añadir parte de las coordenadas
 		
 		public Imagenes(bool initialitze=true)
 		{
