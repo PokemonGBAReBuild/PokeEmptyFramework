@@ -47,7 +47,7 @@ namespace PokemonEmptyFramework.Import.Rom.Batalla
                 ataque.Efecto1.Type = proyecto.Tipos[ataques[i].Datos.Type];
 
                 ataque.Coleccion1 = Frame.Ataque.Coleccion.Sin;
-
+             
                 proyecto.Ataques.Add(ataque);
             }
             for (int i = 0; i < proyecto.Items.Count; i++)
