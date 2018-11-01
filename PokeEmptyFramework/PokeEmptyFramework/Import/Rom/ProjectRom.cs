@@ -11,10 +11,13 @@ namespace PokemonEmptyFramework.Import.Rom
             RomGba romGba = new RomGba(pathRom);
             Proyecto proyecto = new Proyecto();
             //le pongo toda la info posible
-            Batalla.Ataque.Load(proyecto, romGba);
+            //tener en cuenta que los tipos complejos se cargan después que sus partes...sino dará error...
+            Pokemon.Tipo.Load(proyecto, romGba);
             Batalla.Item.Load(proyecto, romGba);
+            Batalla.Ataque.Load(proyecto, romGba);
+          
             Pokemon.Habilidad.Load(proyecto, romGba);
-            //al final de todo cargo pokemon
+
             Pokemon.Pokemon.Load(proyecto, romGba);
 
             return proyecto;

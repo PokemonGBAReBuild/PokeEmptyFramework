@@ -24,12 +24,7 @@ namespace PokemonEmptyFramework.Import.Rom.Batalla
 
                 ataque.Concurso1.Efecto = Serializar.ToUShort(ataques[i].Concursos.DatosConcursosHoenn.SubArray(0, 2));
                 ataque.Concurso1.Categoria = Serializar.ToUShort(ataques[i].Concursos.DatosConcursosHoenn.SubArray(2, 2));
-                ataque.Concurso1.ComboStarter = proyecto.Ataques[Serializar.ToUShort(ataques[i].Concursos.DatosConcursosHoenn.SubArray(4, 2))];
-                for (int j = 6,fJ=j+8; j < fJ; j += 2)
-                {
-                    combo = Serializar.ToUShort(ataques[i].Concursos.DatosConcursosHoenn.SubArray(j, 2));
-                    ataque.Concurso1.ComboMovimientos.Add(proyecto.Ataques[combo]);
-                }
+
                 ataque.Efecto1.Accuracy = ataques[i].Datos.Accuracy;
                 ataque.Efecto1.BasePower = ataques[i].Datos.BasePower;
                 ataque.Efecto1.Category = (Frame.Ataque.Efecto.Categoria)ataques[i].Datos.Category;
@@ -50,6 +45,18 @@ namespace PokemonEmptyFramework.Import.Rom.Batalla
              
                 proyecto.Ataques.Add(ataque);
             }
+            //ahora que tengo los ataques cargados los vinculo
+            for(int i=0;i<proyecto.Ataques.Count;i++)
+            {
+                ataque = proyecto.Ataques[i];
+                ataque.Concurso1.ComboStarter = proyecto.Ataques[Serializar.ToUShort(ataques[i].Concursos.DatosConcursosHoenn.SubArray(4, 2))];
+                for (int j = 6, fJ = j + 8; j < fJ; j += 2)
+                {
+                    combo = Serializar.ToUShort(ataques[i].Concursos.DatosConcursosHoenn.SubArray(j, 2));
+                    ataque.Concurso1.ComboMovimientos.Add(proyecto.Ataques[combo]);
+                }
+            }
+            //acabo poniendo si es una MT/MO
             for (int i = 0; i < proyecto.Items.Count; i++)
             {
                 if (proyecto.Items[i].Bolsillo == Frame.Item.BolsilloObjetos.MTMO)
