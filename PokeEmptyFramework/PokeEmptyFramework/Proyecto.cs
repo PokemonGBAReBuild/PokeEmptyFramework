@@ -17,7 +17,8 @@ namespace PokemonEmptyFramework
         public List<Habilidad> Habilidades { get; private set; }
         public List<GrupoHuevo> GrupoHuevos { get; private set; }
         public List<Tipo> Tipos { get; private set; }
-
+        //falta hacer la parte de los proyectos de la tienda mirar como hacer para saber si se añade algo o no de un proyecto externo
+        //proyectosBase+cambiosUsuario
         public Proyecto()
         {
             Pokedex = new List<Pokemon>();

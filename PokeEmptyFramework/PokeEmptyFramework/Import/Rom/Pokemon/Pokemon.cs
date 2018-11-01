@@ -9,13 +9,10 @@ namespace PokemonEmptyFramework.Import.Rom.Pokemon
 {
     public static class Pokemon
     {
-        public static void Load(Proyecto proyecto, string pathRom)
-        {
-            Load(proyecto, new PokemonGBAFrameWork.RomGba(pathRom));
-        }
+
         public static void Load(Proyecto proyecto, PokemonGBAFrameWork.RomGba rom)
         {
-
+           
             PokemonGBAFrameWork.PokemonCompleto[] pokedex = PokemonGBAFrameWork.PokemonCompleto.GetPokedex(rom);
             Frame.Pokemon pokemon;
             for (int i = 0; i < pokedex.Length; i++)
@@ -68,7 +65,7 @@ namespace PokemonEmptyFramework.Import.Rom.Pokemon
 
                 PonImagenes(pokemon.Imagenes.ImgsFront, pokedex[i].Sprites.SpritesFrontales.Sprites, "front");
                 PonImagenes(pokemon.Imagenes.ImgsBack, pokedex[i].Sprites.SpritesTraseros.Sprites, "back");
-                pokemon.Imagenes.ImgFootPrint = new ImgWithPath(pokedex[i].Huella.GetImagen()) { FileName = "foot_print" + ImgWithPath.EXTENSION };
+                pokemon.Imagenes.ImgFootPrint = new ImgWithPath("foot_print" + ImgWithPath.EXTENSION, pokedex[i].Huella.GetImagen());
                 pokemon.Imagenes.PaletaNormal = new Paleta(pokedex[i].Sprites.PaletaNormal.Paleta.Colores);
                 pokemon.Imagenes.PaletaShiny = new Paleta(pokedex[i].Sprites.PaletaShiny.Paleta.Colores);
 
@@ -81,8 +78,7 @@ namespace PokemonEmptyFramework.Import.Rom.Pokemon
             ImgWithPath img;
             for (int i = 0; i < sprites.Count; i++)
             {
-                img = new ImgWithPath(sprites[i]);
-                img.FileName = string.Format("{0}_{1}{2}", prefix, i, ImgWithPath.EXTENSION);
+                img = new ImgWithPath(string.Format("{0}_{1}{2}", prefix, i, ImgWithPath.EXTENSION), sprites[i]);
                 lstDestino.Add(img);
             }
 

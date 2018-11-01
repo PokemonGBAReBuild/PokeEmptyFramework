@@ -36,8 +36,8 @@ namespace PokemonEmptyFramework
 		ImgWithPath imgFootPrint;
 
 
-        Coordenadas CoordenadasFront;
-        Coordenadas CoordenadasBack;
+        Coordenadas coordenadasFront;
+        Coordenadas coordenadasBack;
 
 		public Imagenes(bool initialitze=true)
 		{
@@ -135,10 +135,14 @@ namespace PokemonEmptyFramework
 				return paletasShiny;
 			}
 		}
-		/// <summary>
-		/// Solo actualiza los archivos eso quiere decir que los que no esten creados no los pone
-		/// </summary>
-		public void UpdateFiles()
+
+        public Coordenadas CoordenadasFront { get => coordenadasFront; set => coordenadasFront = value; }
+        public Coordenadas CoordenadasBack { get => coordenadasBack; set => coordenadasBack = value; }
+
+        /// <summary>
+        /// Solo actualiza los archivos eso quiere decir que los que no esten creados no los pone
+        /// </summary>
+        public void UpdateFiles()
 		{
 			IList<ImgWithPath>[] lsts={ImgsBack,ImgsFront,new ImgWithPath[]{ImgIcon,ImgFootPrint}};
 			

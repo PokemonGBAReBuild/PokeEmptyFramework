@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>PokemonEmptyFramework</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>PokeEmptyFramework</Copyright>
+    <PackageProjectUrl>https://github.com/PokemonGBAReBuild/PokeEmptyFramework</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PokemonGBAReBuild/PokeEmptyFramework</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/PokemonGBAReBuild/PokeEmptyFramework/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
